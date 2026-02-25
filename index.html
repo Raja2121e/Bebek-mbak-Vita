@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebek Madura Mbak Vita - Autentik & Lezat</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --primary: #D35400; /* Warna Tembakau / Bitter Orange */
+            --secondary: #2C3E50; /* Warna gelap untuk teks */
+            --accent: #F39C12; /* Warna aksen kuning keemasan */
+            --bg-light: #FAFAFA;
+            --text-gray: #555;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--primary);
+            color: white !important;
+            border-radius: 50px;
+        }
+
+        .btn-nav:hover {
+            background-color: #a04000;
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://img.inews.co.id/media/822/files/inews_new/2021/01/19/IMG_19012021_134602__822_x_430_piksel_.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 30px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .btn-hero {
+            padding: 1rem 2.5rem;
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            border: 2px solid var(--primary);
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn-hero:hover {
+            background-color: transparent;
+            border-color: white;
+        }
+
+        /* --- SECTIONS GLOBAL --- */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 1rem auto;
+        }
+
+        /* --- ABOUT --- */
+        .about {
+            background-color: white;
+            text-align: center;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- MENU --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .menu-img-wrapper {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .menu-info {
+            padding: 1.5rem;
+        }
+
+        .menu-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .menu-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .menu-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .order-btn {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .order-btn:hover {
+            color: var(--primary);
+        }
+
+        /* --- CONTACT --- */
+        .contact {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- FLOATING WA --- */
+        .wa-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .wa-float:hover {
+            background-color: #1ebc57;
+            transform: scale(1.1);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none; /* Simple hide for this demo, usually requires hamburger menu */
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-logo">Bebek Madura <span style="color:var(--primary)">Mbak Vita</span></div>
+    <ul class="nav-links">
+        
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Kontak</a></li>
+        <li><a href="#menu" class="btn-nav">Pesan Sekarang</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Rasa Autentik<br>Madura</h1>
+        <p>Nikmati kelezatan bebek bumbu hitam khas Jawa Timur yang kaya rempah.</p>
+        <a href="#menu" class="btn-hero">Lihat Menu Kami</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <div class="section-header">
+        <h2>Kisah Kuliner Kami</h2>
+        <div class="divider"></div>
+    </div>
+    <p>
+        Sejak 2022, <strong>Bebek Madura Mbak Vita</strong> berkomitmen menghadirkan pengalaman kuliner yang tak terlupakan. Kami menyajikan bebek pilihan dengan pengolahan tradisional yang dicampur dengan teknologi modern, menghasilkan tekstur yang empuk di dalam dan kulit yang renyah. Bumbu hitam kami dibuat dari rempah pilihan yang memberikan cita rasa pedas, manis, dan gurih yang sempurna.
+    </p>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu">
+    <div class="section-header">
+        <h2>Menu Andalan</h2>
+        <div class="divider"></div>
+        <p>Pilihan terbaik yang telah dicicipi oleh ribuan pelanggan setia.</p>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper">
+                    <img src="picture/WhatsApp Image 2026-02-22 at 09.02.39.jpeg" alt="Bebek Goreng">
+                </div>
+                <div class="menu-info">
+                    <h3>Paket Bebek Goreng</h3>
+                    <p>Potongan bebek empuk disajikan dengan sambal hitam signature, nasi putih hangat, dan lalapan segar.</p>
+                    <div class="menu-footer">
+                        <span class="price">Rp 25.000</span>
+                        <a href="https://wa.me/6281806580533" target="_blank" class="order-btn">Pesan <i class="fas fa-arrow-right"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-card">
+                <div class="menu-img-wrapper">
+                    <img src="picture/bebek 2.jpg" alt="Bebek Bakar">
+                </div>
+                <div class="menu-info">
+                    <h3>Bebek Bakar Spesial</h3>
+                    <p>Bebek dibakar perlahan dengan baluran bumbu rempah khas madura, disajikan dengan sambal pedas manis.</p>
+                    <div class="menu-footer">
+                        <span class="price">Rp 28.000</span>
+                        <a href="https://wa.me/6281806580533" target="_blank" class="order-btn">Pesan <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Item 3 -->
+             <div class="menu-card">
+                <div class="menu-img-wrapper">
+                    <img src="picture/bebek balado 2.webp" alt="Bebek Balado">
+                </div>
+                <div class="menu-info">
+                    <h3>Bebek Balado</h3>
+                    <p>Perpaduan cita rasa manis dan pedas yang menggugah selera, cocok untuk pecinta tantangan pedas.</p>
+                    <div class="menu-footer">
+                        <span class="price">Rp 27.000</span>
+                        <a href="https://wa.me/6281806580533" target="_blank" class="order-btn">Pesan <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KONTAK -->
+<section id="contact" class="contact">
+    <div class="section-header">
+        <h2>Kunjungi Kami</h2>
+        <div class="divider" style="background-color: white;"></div>
+    </div>
+    
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Nerogtog,Pinang,Indonesia</span>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-instagram"></i>
+            <span>@bebekmadurambakvita</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>+62 813-1064-373</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Bebek Madura Mbak Vita. All Rights Reserved.</p>
+    <p style="font-size: 0.8rem; margin-top: 5px; color: #666;">Designed with care for food lovers</p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/6281806580533" class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
